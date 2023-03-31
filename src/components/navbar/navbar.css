@@ -1,0 +1,135 @@
+.navbar_section {
+    /* background-color: red; */
+    height: 4rem;
+    /* margin-top: 1rem; */
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.nav_left {
+    display: flex;
+    align-items: center;
+}
+
+.nav_left h3 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.left_img {
+    width: 5%;
+}
+
+.nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.nav_right .nav_menu {
+    display: flex;
+    /* align-items: center; */
+}
+
+.nav_right .nav_menu li {
+    margin-left: 2rem;
+    /* align-items: center; */
+}
+
+.nav_right .nav_menu li:first-child {
+    color: rgb(109, 109, 239);
+}
+
+.nav_right button {
+    display: none;
+}
+
+
+/* ============== MEDIA QUERIES (MEDIUM) ============ */
+
+@media screen and (max-width: 1024px) {
+    .nav_right .nav_menu {
+        display: none;
+    }
+    .nav_right button {
+        display: none;
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+    .nav_menu-mobile {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+    }
+    .nav_menu-mobile li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavItems 400ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+    .nav_menu-mobile li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+    .nav_menu-mobile li:nth-child(3) {
+        animation-delay: 400ms;
+    }
+    .nav_menu-mobile li:nth-child(4) {
+        animation-delay: 600ms;
+    }
+    .nav_menu-mobile li:nth-child(5) {
+        animation-delay: 800ms;
+    }
+    .nav_menu-mobile li:nth-child(6) {
+        animation-delay: 1s;
+    }
+    .nav_menu-mobile li:nth-child(7) {
+        animation-delay: 1.2s;
+    }
+    @keyframes animateNavItems {
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+    .nav_menu-mobile li {
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .nav_menu-mobile li:hover {
+        background: var(--color-bg2);
+        color: var(--color-white);
+    }
+    .nav_left h3 {
+        font-weight: 500;
+        font-size: 15px;
+    }
+}
+
+
+/** ============== MEDIA QUERIES (SMALL) ============ */
+
+@media screen and (max-width: 600px) {
+    .nav_menu-mobile {
+        right: 3%;
+    }
+}
